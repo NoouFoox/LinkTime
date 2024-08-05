@@ -1,0 +1,4 @@
+name: LinkTime
+version: '${project.version}'
+main: fun.cyclesn.linktime.LinkTime
+api-version: '1.19'
