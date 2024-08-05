@@ -2,3 +2,8 @@ name: LinkTime
 version: '${project.version}'
 main: fun.cyclesn.linktime.LinkTime
 api-version: '1.19'
+commands:
+  ltest:
+    description: "linkTime测试命令"
+    aliases:
+      - lt

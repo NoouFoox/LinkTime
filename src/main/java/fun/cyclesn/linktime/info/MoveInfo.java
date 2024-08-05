@@ -9,7 +9,12 @@ public class MoveInfo {
         this.y = y;
         this.z = z;
     }
-
+    public boolean equals(MoveInfo moveInfo){
+        if(moveInfo==null){
+            return false;
+        }
+        return this.x.equals(moveInfo.getX()) && this.y.equals(moveInfo.getY()) && this.z.equals(moveInfo.getZ());
+    }
     public Double getX() {
         return x;
     }
