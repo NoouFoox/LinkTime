@@ -29,12 +29,4 @@ public final class LinkTime extends JavaPlugin {
     public void onDisable() {
         // Plugin shutdown logic
     }
-    public void movePlayerToLocation(Player player, Location targetLocation) {
-        Location playerLocation = player.getLocation();
-        Vector direction = targetLocation.toVector().subtract(playerLocation.toVector());
-//        direction.normalize();
-        double speed = 1;
-        Vector velocity = direction.multiply(speed);
-        player.setVelocity(velocity);
-    }
 }

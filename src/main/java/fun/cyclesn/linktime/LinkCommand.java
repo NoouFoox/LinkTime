@@ -1,5 +1,6 @@
 package fun.cyclesn.linktime;
 
+import fun.cyclesn.linktime.fc.MoveFc;
 import org.bukkit.Location;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -12,7 +13,7 @@ public class LinkCommand implements CommandExecutor {
         Player player = (Player) sender;
         Location location = player.getLocation();
         Location targetLocation = new Location(location.getWorld(), location.getX()+10, location.getY(), location.getZ()+10);
-        LinkTime.main.movePlayerToLocation(player, targetLocation);
+        MoveFc.movePlayerToLocation(player, targetLocation);
         player.sendMessage("测试消息");
         return false;
     }

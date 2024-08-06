@@ -1,5 +1,6 @@
 package fun.cyclesn.linktime;
 
+import fun.cyclesn.linktime.fc.MoveFc;
 import fun.cyclesn.linktime.info.MoveInfo;
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
@@ -35,7 +36,7 @@ public class LinkListener implements Listener {
         Player player = event.getPlayer();
         Location location = player.getLocation();
         Location targetLocation = new Location(location.getWorld(), location.getX()+3, location.getY(), location.getZ()+3);
-        LinkTime.main.movePlayerToLocation(player, targetLocation);
+        MoveFc.movePlayerToLocation(player, targetLocation);
         player.sendMessage("测试消息");
     }
 }
