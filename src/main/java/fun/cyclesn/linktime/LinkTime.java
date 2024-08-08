@@ -21,6 +21,7 @@ public final class LinkTime extends JavaPlugin {
     @Override
     public void onEnable() {
         Objects.requireNonNull(Bukkit.getPluginCommand("ltest")).setExecutor(new LinkCommand());
+        Objects.requireNonNull(Bukkit.getPluginCommand("ltest")).setTabCompleter(new LinkCommand());
         Bukkit.getPluginManager().registerEvents(new LinkListener(),this);
         System.out.println("LinkTime loaded");
     }

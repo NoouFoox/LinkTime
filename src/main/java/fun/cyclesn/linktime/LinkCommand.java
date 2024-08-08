@@ -5,9 +5,13 @@ import org.bukkit.Location;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
+import org.bukkit.command.TabCompleter;
 import org.bukkit.entity.Player;
 
-public class LinkCommand implements CommandExecutor {
+import java.util.ArrayList;
+import java.util.List;
+
+public class LinkCommand implements CommandExecutor, TabCompleter {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String s, String[] strings) {
         Player player = (Player) sender;
@@ -16,5 +20,22 @@ public class LinkCommand implements CommandExecutor {
         MoveFc.movePlayerToLocation(player, targetLocation);
         player.sendMessage("测试消息");
         return false;
+    }
+
+    @Override
+    public List<String> onTabComplete(CommandSender sender, Command command, String s, String[] args) {
+        List<String> completions = new ArrayList<>();
+        if (command.getName().equalsIgnoreCase("mycommand")) {
+            if (args.length == 1) {
+                completions.add("option1");
+                completions.add("option2");
+                completions.add("option3");
+            } else if (args.length == 2) { // 第二个参数
+                completions.add("suboption1");
+                completions.add("suboption2");
+            }
+        }
+
+        return completions;
     }
 }
