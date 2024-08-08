@@ -24,6 +24,7 @@ public class LinkListener implements Listener {
         Player player = event.getPlayer();
         Vector speedVector = player.getVelocity();
         if (RIGHT_CLICK_ACTIONS.contains(action) && !event.isBlockInHand() && speedVector.length() != 0) {
+            speedVector.setY(0);
             ItemStack handItem = player.getInventory().getItemInMainHand();
             player.sendMessage("You right clicked with " + handItem.getType());
             double dodgeDistance = 5;
